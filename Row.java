@@ -9,8 +9,11 @@ import java.util.HashMap;
 
 public class Row {
     
-    private final String projectName;
-    private final HashMap<String, Double> data;
+    private final String project;
+    private final double postcode;
+    private final double latitude;
+    private final double longitude;
+    private final HashMap<String, String> data;
 
     /**
      * Constructor for Row class. 
@@ -20,42 +23,57 @@ public class Row {
         String project,
         String start,
         String projectEnd,
-        double buildingID,
-        int addrNumber,
+        String buildingID,
+        String addrNumber,
         String street,
         String borough,
-        double postcode,
-        double latitude,
-        double longitude,
         String buildingEnd,
-        String constructionType,
+        String constructType,
     ) {
         this.project = project;
         
-        this.data = new HashMap<String, Double>();
-        this.data.put("16", sixteen);
-        this.data.put("17", seventeen);
-        this.data.put("18", eighteen);
-        this.data.put("19", nineteen);
-        this.data.put("20", twenty);
-        this.data.put("21", twentyOne);
-        this.data.put("22", twentyTwo);
-        this.data.put("23", twentyThree);
-        this.data.put("24", twentyFour);
-        this.data.put("25", twentyFive);
-        this.data.put("26", twentySix);
-        this.data.put("27", twentySeven);
-        this.data.put("28", twentyEight);
-        this.data.put("29", twentyNine);
-        this.data.put("30", thirty);
+        this.data = new HashMap<String, String>();
+        this.data.put("Project Name", name);
+        this.data.put("Project Start Date", start);
+        this.data.put("Project Completion Date", eighteen);
+        this.data.put("Building ID", buildingID);
+        this.data.put("Number", addrNumber);
+        this.data.put("Street", twentyOne);
+        this.data.put("Borough", borough);
+        this.data.put("Building Completion Date", buildingEnd);
+        this.data.put("Reporting Construction Type", constructType);
     }
 
     /**
-     * Getter method for all String values associated with this row.
-     * @return String value associated with this row.
+     * Getter method for project name variable.
+     * @return project name data for this Row instance.
      */
-    public final String getWord() {
-        return this.definition;
+    public final String getProject() {
+        return this.project;
+    }
+
+    /**
+     * Getter method for project postcode.
+     * @return postcode for project.
+     */
+    public final double getPostcode() {
+        return this.postcode;
+    }
+
+    /**
+     * Getter method for project location latitude.
+     * @return latitude for project.
+     */
+    public final double getLatitude() {
+        return this.latitude;
+    }
+
+    /**
+     * Getter method for project location longitude.
+     * @return longitude for project.
+     */
+    public final double getLongitude() {
+        return this.longitude;
     }
     
     /**
