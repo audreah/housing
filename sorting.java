@@ -2,6 +2,10 @@
  * Implementation of merge sort to sort Row objects.
  */
 
+import java.util.Comparator;
+import java.util.Vector;
+import java.util.Iterator;
+
 public class Sorting {
     /**
      * Sorts a Vector of Row objects in-place using the merge sort 
