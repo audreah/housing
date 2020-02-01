@@ -1,34 +1,36 @@
+/**
+ * filename: Row.java
+ * description: Initializes Row class
+ * date: 02/01/2020
+ * @author Audrea Huang
+ */
+
 import java.util.HashMap;
 
 public class Row {
     
-    private final String definition;
+    private final String projectName;
     private final HashMap<String, Double> data;
 
     /**
      * Constructor for Row class. 
-     * Each Row represents data on the city-year level.
+     * Each Row represents data on the project level.
      */
     public Row(
-        String definition,
-        String category,
-        double sixteen,
-        double seventeen,
-        double eighteen,
-        double nineteen,
-        double twenty,
-        double twentyOne,
-        double twentyTwo,
-        double twentyThree,
-        double twentyFour,
-        double twentyFive,
-        double twentySix,
-        double twentySeven,
-        double twentyEight,
-        double twentyNine,
-        double thirty
+        String project,
+        String start,
+        String projectEnd,
+        double buildingID,
+        int addrNumber,
+        String street,
+        String borough,
+        double postcode,
+        double latitude,
+        double longitude,
+        String buildingEnd,
+        String constructionType,
     ) {
-        this.definition = definition;
+        this.project = project;
         
         this.data = new HashMap<String, Double>();
         this.data.put("16", sixteen);
