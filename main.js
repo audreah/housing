@@ -48,7 +48,7 @@ const gContainer = svg.append('g')
   // MARGIN CONVENTION INSERTION
   .attr('transform', `translate(${margin.left},${margin.top})`)
 // Ok, now let's load some data. We'll go to over to https://observablehq.com/@d3/bar-chart and pull that dataset. Then, we use async/await d3.csv to load the data.
-loadData('NYC_Women_s_Resource_Network_Database.csv')
+loadData('data.csv')
 async function loadData(dataset) {
   const data = await d3.csv(dataset)
   // console.log(data)
