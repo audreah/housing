@@ -132,9 +132,9 @@ async function loadData(dataset) {
     }, 10500)
   }
   function updateData() {
-    const randNum = () => Math.floor(Math.random()*27)
-    const num = randNum()
-    console.log('num', num)
+    // const randNum = () => Math.floor(Math.random()*27)
+    // const num = randNum()
+    // console.log('num', num)
     const numSet = new Set
     let counter = 0
     while (counter < 5) { numSet.add(randNum()); counter++ }
