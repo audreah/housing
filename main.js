@@ -132,12 +132,12 @@ async function loadData(dataset) {
     }, 10500)
   }
   function updateData() {
-    // const randNum = () => Math.floor(Math.random()*27)
-    // const num = randNum()
-    // console.log('num', num)
+    const randNum = () => Math.floor(Math.random()*27)
+    const num = randNum()
+    console.log('num', num)
     const numSet = new Set
     let counter = 0
-    while (counter < 5) { numSet.add(randNum()); counter++ }
+    while (counter < num) { numSet.add(randNum()); counter++ }
     const updatedData = data.filter((d, i) => numSet.has(i))
     console.log('updatedData:')
     console.table(updatedData)
@@ -182,7 +182,7 @@ async function loadData(dataset) {
         update => update
           .attr('fill', 'black'),
         exit => exit
-          .attr('fill', 'red')
+          .attr('fill', 'blue')
         .call(exit => exit.transition(t)
           .attr('y', d => yScale(d.value) + height * 1.5)
           .attr('fill', 'white')
