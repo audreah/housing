@@ -10,9 +10,7 @@ import java.util.HashMap;
 public class Row {
     
     private final String project;
-    private final double postcode;
-    private final double latitude;
-    private final double longitude;
+    private final double postcode, latitude, longitude;
     private final HashMap<String, String> data;
 
     /**
@@ -27,18 +25,24 @@ public class Row {
         String addrNumber,
         String street,
         String borough,
+        double postcode,
+        double latitude,
+        double longitude,
         String buildingEnd,
-        String constructType,
+        String constructType
     ) {
         this.project = project;
+        this.postcode = postcode;
+        this.latitude = latitude;
+        this.longitude = longitude;
         
         this.data = new HashMap<String, String>();
-        this.data.put("Project Name", name);
+        this.data.put("Project Name", project);
         this.data.put("Project Start Date", start);
-        this.data.put("Project Completion Date", eighteen);
+        this.data.put("Project Completion Date", projectEnd);
         this.data.put("Building ID", buildingID);
         this.data.put("Number", addrNumber);
-        this.data.put("Street", twentyOne);
+        this.data.put("Street", street);
         this.data.put("Borough", borough);
         this.data.put("Building Completion Date", buildingEnd);
         this.data.put("Reporting Construction Type", constructType);
@@ -80,7 +84,7 @@ public class Row {
      * Getter method for all numerical values associated with this row.
      * @return numerical value associated with this row.
      */
-    public final double getDataValue(String variableName) {
+    public final String getDataValue(String variableName) {
         if( this.data.containsKey(variableName) ) {
             return this.data.get(variableName);
         }
@@ -95,7 +99,8 @@ public class Row {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("{");
-        sb.append("word=" + this.definition);
+        sb.append("name=" + this.project + ", ");
+        sb.append("postcode=" + this.postcode + ", ");
         sb.append("}");
         return sb.toString();
     }

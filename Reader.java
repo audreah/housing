@@ -38,23 +38,18 @@ public class Reader {
             while ( ((dataRow = parser.nextRow()) != null) && 
                     currentNumberRows < numRows ) {
                 Row row = new Row(
-                    dataRow.getField("definition"),
-                    dataRow.getField("category"),
-                    getDoubleField(dataRow, "16"),
-                    getDoubleField(dataRow, "17"),
-                    getDoubleField(dataRow, "18"),
-                    getDoubleField(dataRow, "19"),
-                    getDoubleField(dataRow, "20"),
-                    getDoubleField(dataRow, "21"),
-                    getDoubleField(dataRow, "22"),
-                    getDoubleField(dataRow, "23"),
-                    getDoubleField(dataRow, "24"),
-                    getDoubleField(dataRow, "25"),
-                    getDoubleField(dataRow, "26"),
-                    getDoubleField(dataRow, "27"),
-                    getDoubleField(dataRow, "28"),
-                    getDoubleField(dataRow, "29"),
-                    getDoubleField(dataRow, "30")
+                    dataRow.getField("Project Name"),
+                    dataRow.getField("Project Start Date"),
+                    dataRow.getField("Project Completion Date"),
+                    dataRow.getField("Building ID"),
+                    dataRow.getField("Number"),
+                    dataRow.getField("Street"),
+                    dataRow.getField("Borough"),
+                    getDoubleField(dataRow, "Postcode"),
+                    getDoubleField(dataRow, "Latitude"),
+                    getDoubleField(dataRow, "Longitude"),
+                    dataRow.getField("Building Completion Date"),
+                    dataRow.getField("Reporting Construction Type")                    
                 );
                 data.add(row);
                 currentNumberRows++;
@@ -70,14 +65,11 @@ public class Reader {
         return this.data;
     }
 
-    /**
-     * Some starter code to help you understand how filterBy works.
-     */
     public static void main(String[] args) throws IOException {
         Reader reader = new Reader(
-            "/Users/audreahuang/Downloads/item_data.csv", 680);
+            "/Users/audreahuang/housing/Housing_New_York_Units_by_Building.csv", 680);
         FilterableDataset dataset = reader.getDataset();
-        System.out.println("first element: " + dataset.get(0)); // baa baa
+        System.out.println("first element: " + dataset.get(0)); // 141 METROPOLITAN AVENUE
         System.out.println("dataset size: " + dataset.size());
     }
 }

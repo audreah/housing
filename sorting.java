@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.Vector;
 import java.util.Iterator;
 
-public class Sorting {
+public class sorting {
     /**
      * Sorts a Vector of Row objects in-place using the merge sort 
      * algorithm. Will leave data sorted in ascending order.
