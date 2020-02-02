@@ -137,7 +137,7 @@ async function loadData(dataset) {
     console.log('num', num)
     const numSet = new Set
     let counter = 0
-    while (counter < num) { numSet.add(randNum()); counter++ }
+    while (counter < 5) { numSet.add(randNum()); counter++ }
     const updatedData = data.filter((d, i) => numSet.has(i))
     console.log('updatedData:')
     console.table(updatedData)
